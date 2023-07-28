@@ -1,0 +1,82 @@
+trello assignment 6:
+using mongoose and express
+users collection-->schema( userName , email , password hashed , age , gender , phone)
+tasks collection-->schema(title , description , status{toDo , doing , done} , userId , assignTo , deadline)
+
+don't forget to get user id from token
+
+1)user
+1-signUp 
+2-login-->with create token
+3-change password (user must be logged in)
+4-update user (age , firstName , lastName)(user must be logged in)
+5-delete user(user must be logged in)
+6-soft delete(user must be logged in)
+7-logout
+
+
+2)task
+1-add task with status (toDo)(user must be logged in)
+2-update task (title , description , status) and assign task to other user(user must be logged in) (creator only can update task)
+3-delete task(user must be logged in) (creator only can delete task)
+4-get all tasks with user data
+5-get tasks of oneUser with user data (user must be logged in)
+6-get all tasks of oneUser with user data
+7-get all tasks that not done after deadline
+
+.................
+add task 
+
+{"title" :"asignment6",
+     "description":"this is asignment6",
+     " status":"toDo" ,
+       "userId" :1 , 
+       "assignTo" :"64b5ca1296157ede4270e422", 
+       "deadline" :"2023-07-17T00:00:00.000+00:00"}
+
+   add user 
+
+ {"userName ":"braa" ,
+"email":"braa2005@gmail.com",
+"passwordHashed" :"000",
+"cPassword":"000",
+"age":18,
+"gender":"male", 
+"phone":"01027484428"
+  
+}
+ {"userName ":"batool" ,
+"email":"batool2001@gmail.com",
+"passwordHashed" :"700",
+"cPassword":"700",
+"age":22,
+"gender":"female", 
+"phone":"01024384428"}
+{
+  "userName": "romais",
+  "email": "romahmmmam2001@gmail.com",
+  "passwordHashed": "111",
+  "cPassord":"111",
+  "age": 15,
+  "gender": "female",
+  "phone": "01061226824"
+}
+{
+  "userName": "yosr",
+  "email": "sorahmmmam2000@gmail.com",
+  "passwordHashed": "2211",
+  "cPassord":"2211",
+  "role":"student",
+  "age": 23,
+  "gender": "female",
+  "phone": "01068624128"
+}
+
+update task
+
+{ "_id":"64b5ca0396157ede4270e41e" ,
+    "title":"Assignment6",
+     "description":"we must deliver tasks before deadline",
+     "status":"doing"
+      
+}
